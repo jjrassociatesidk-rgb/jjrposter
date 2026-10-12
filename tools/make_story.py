@@ -10,7 +10,7 @@ ap=argparse.ArgumentParser()
 ap.add_argument("--heading",required=True); ap.add_argument("--title",required=True); ap.add_argument("--sub",default="")
 ap.add_argument("--date",required=True); ap.add_argument("--badge",default="DUE DATE ALERT"); ap.add_argument("--label",default="LAST DATE TO FILE")
 ap.add_argument("--points",default=""); ap.add_argument("--out",required=True)
-DEFAULT_MENTIONS="@rohan__jose @_justin_scaria_ @swetha_thomas_ @akshaya.sebastian @_anne_sacharias"
+DEFAULT_MENTIONS=""  # names are NOT printed on stories (user preference); mentions are added as stickers by hand
 ap.add_argument("--mentions",default=DEFAULT_MENTIONS,help="space-separated @handles printed on the story (text only; API cannot add clickable stickers); pass '' to hide")
 a=ap.parse_args()
 HERE=os.path.dirname(os.path.abspath(__file__)); LOGO=os.path.join(HERE,"..","assets","ca_logo.png")
