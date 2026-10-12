@@ -113,12 +113,13 @@ text(nx+52,FT+158,"www.jjrassociates.co.in",wf,(255,255,255))
 rect((46,FT+218,W-46,FT+220),line)
 def pin(x,y):
     ell((x,y,x+22,y+22),fill=orange); d.polygon([(P(x+3),P(y+16)),(P(x+19),P(y+16)),(P(x+11),P(y+34))],fill=orange); ell((x+7,y+7,x+15,y+15),fill=(255,255,255))
-def office(x,label,l1,l2,phone):
+def office(x,label,name,l1,l2,phone):
     pin(x,FT+238)
     text(x+34,FT+238,label,F(BD,22),navy,sp=2)
     pf2=F(XB,29); text(x+448,FT+233,phone,pf2,green,anchor="r")
-    text(x,FT+278,l1,F(MD,25),ink,maxw=x+470); text(x,FT+310,l2,F(MD,25),ink,maxw=x+470)
-office(46,"HEAD OFFICE","Central Junction,","Nedumkandam, Idukki","6282535310")
-rect((W/2-1,FT+238,W/2+1,FT+336),line)
-office(586,"BRANCH","Chavacheril Building, KK Road,","Manarcadu, Kottayam","9037776493")
+    text(x,FT+270,name,F(XB,26),navy)
+    text(x,FT+302,l1,F(MD,24),ink,maxw=x+470); text(x,FT+330,l2,F(MD,24),ink,maxw=x+470)
+office(46,"HEAD OFFICE","CA JUSTIN SCARIA","Central Junction,","Nedumkandam, Idukki","6282535310")
+rect((W/2-1,FT+238,W/2+1,FT+356),line)
+office(586,"BRANCH","CA ROHAN JOSE","Chavacheril Building, KK Road,","Manarcadu, Kottayam","9037776493")
 out=img.convert("RGB").resize((W,H),Image.LANCZOS); os.makedirs(os.path.dirname(os.path.abspath(a.out)),exist_ok=True); out.save(a.out,quality=92,optimize=True) if a.out.lower().endswith((".jpg",".jpeg")) else out.save(a.out); print(out.size)
