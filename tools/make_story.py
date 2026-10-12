@@ -106,8 +106,10 @@ def pin(x,y):
     ell((x,y,x+20,y+20),fill=orange); d.polygon([(P(x+3),P(y+15)),(P(x+17),P(y+15)),(P(x+10),P(y+30))],fill=orange); ell((x+6,y+6,x+14,y+14),fill=(255,255,255))
 def phone_icon(x,y):
     rr((x,y,x+15,y+26),4,fill=green); rr((x+3,y+4,x+12,y+19),1,fill=(255,255,255)); ell((x+5.5,y+20.5,x+9.5,y+24.5),fill=(255,255,255))
+def person_icon(x,y):
+    ell((x+4,y,x+17,y+13),fill=orange); d.pieslice([P(x),P(y+15),P(x+21),P(y+39)],180,360,fill=orange)
 def office(x,label,name,l1,l2,phone):
-    pin(x,fb[1]+198); text(x+30,fb[1]+194,name,F(XB,28),navy)
+    person_icon(x,fb[1]+198); text(x+30,fb[1]+194,name,F(XB,28),navy)
     text(x+30,fb[1]+234,l1,F(MD,24),ink,maxw=x+430); text(x+30,fb[1]+263,l2,F(MD,24),ink,maxw=x+430)
     phone_icon(x+3,fb[1]+303); text(x+30,fb[1]+301,phone,F(XB,29),green)
 office(fb[0]+44,"","CA Justin Scaria","Central Junction,","Nedumkandam, Idukki","+91 62825 35310")
