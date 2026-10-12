@@ -10,6 +10,8 @@ ap=argparse.ArgumentParser()
 ap.add_argument("--heading",required=True); ap.add_argument("--title",required=True); ap.add_argument("--sub",default="")
 ap.add_argument("--date",required=True); ap.add_argument("--badge",default="DUE DATE ALERT"); ap.add_argument("--label",default="LAST DATE TO FILE")
 ap.add_argument("--points",default=""); ap.add_argument("--out",required=True)
+DEFAULT_MENTIONS="@rohan__jose @_justin_scaria_ @swetha_thomas_ @akshaya.sebastian @_anne_sacharias"
+ap.add_argument("--mentions",default=DEFAULT_MENTIONS,help="space-separated @handles printed on the story (text only; API cannot add clickable stickers); pass '' to hide")
 a=ap.parse_args()
 HERE=os.path.dirname(os.path.abspath(__file__)); LOGO=os.path.join(HERE,"..","assets","ca_logo.png")
 S=2; W,H=1080,1920
@@ -73,7 +75,7 @@ text(tx,cb[1]+52,a.label,F(BD,26),(255,196,120),sp=3)
 text(tx,cb[1]+100,a.date,fit(a.date,XB,78,cb[2]-tx-24),(255,255,255))
 # points
 pts=[p for p in a.points.split("|") if p.strip()]
-pf=F(SB,34); y0=1120
+pf=F(SB,34); y0=1105
 if pts:
     maxw=max(tw(p,pf) for p in pts)+60; x0=W/2-maxw/2
     assert maxw<W-80,"points too wide"
@@ -82,6 +84,12 @@ if pts:
         ell((x0,y+2,x0+42,y+44),fill=green)
         d.line([(P(x0+11),P(y+24)),(P(x0+18),P(y+31)),(P(x0+31),P(y+15))],fill=(255,255,255),width=P(5),joint="curve")
         text(x0+62,y+3,p,pf,ink)
+# mentions (text only), two centred lines between the points and the footer card
+hs=a.mentions.split()
+if hs:
+    mf=F(SB,25); half=(len(hs)+1)//2
+    for i,grp in enumerate([hs[:half],hs[half:]]):
+        if grp: text(W/2,1305+i*32,"  ".join(grp),mf,mute,anchor="c",maxw=W-60)
 # footer card (inside safe area: ends by y=1680)
 fb=(50,1390,1030,1680); shadow(fb,30,blur=18,off=10,alpha=50)
 rr(fb,30,fill=card,outline=line,width=2)
