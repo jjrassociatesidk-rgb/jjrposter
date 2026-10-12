@@ -98,7 +98,7 @@ if a.note:
     ny=y0+n*ch+(n-1)*gap+(10 if compact else 20); nh=38 if compact else 50
     rr((cx0,ny,cx1,ny+nh),22,fill=(253,238,224)); text(W/2,ny+(nh-23)/2-3,a.note,fit(a.note,SB,23,cx1-cx0-30),(150,70,10),anchor="c")
 # footer card (inside safe area: ends by y=1680)
-fb=(50,1394,1030,1768); shadow(fb,30,blur=18,off=10,alpha=50)
+fb=(50,1394,1030,1746); shadow(fb,30,blur=18,off=10,alpha=50)
 rr(fb,30,fill=card,outline=line,width=2)
 rect((fb[0]+30,fb[1],fb[0]+330,fb[1]+6),orange); rect((fb[0]+330,fb[1],fb[0]+660,fb[1]+6),navy); rect((fb[0]+660,fb[1],fb[2]-30,fb[1]+6),green)
 logo=Image.open(LOGO); lh=P(104); lw=int(logo.width*lh/logo.height)
@@ -114,13 +114,12 @@ def pin(x,y):
 def phone_icon(x,y):
     rr((x,y,x+15,y+26),4,fill=green); rr((x+3,y+4,x+12,y+19),1,fill=(255,255,255)); ell((x+5.5,y+20.5,x+9.5,y+24.5),fill=(255,255,255))
 def office(x,label,name,l1,l2,phone):
-    pin(x,fb[1]+194); text(x+30,fb[1]+194,label,F(BD,22),navy,sp=1.5)
-    text(x,fb[1]+226,name,F(XB,27),navy)
-    text(x,fb[1]+258,l1,F(MD,24),ink,maxw=x+430); text(x,fb[1]+286,l2,F(MD,24),ink,maxw=x+430)
-    phone_icon(x+1,fb[1]+324); text(x+30,fb[1]+322,phone,F(XB,29),green)
-office(fb[0]+44,"HEAD OFFICE","CA Justin Scaria","Central Junction,","Nedumkandam, Idukki","+91 62825 35310")
-rect((W/2-1,fb[1]+194,W/2+1,fb[3]-22),line)
-office(W/2+34,"BRANCH","CA Rohan Jose","Chavacheril Building, KK Road,","Manarcadu, Kottayam","+91 90377 76493")
+    pin(x,fb[1]+198); text(x+30,fb[1]+194,name,F(XB,28),navy)
+    text(x+30,fb[1]+234,l1,F(MD,24),ink,maxw=x+430); text(x+30,fb[1]+263,l2,F(MD,24),ink,maxw=x+430)
+    phone_icon(x+3,fb[1]+303); text(x+30,fb[1]+301,phone,F(XB,29),green)
+office(fb[0]+44,"","CA Justin Scaria","Central Junction,","Nedumkandam, Idukki","+91 62825 35310")
+rect((W/2-1,fb[1]+198,W/2+1,fb[3]-24),line)
+office(W/2+34,"","CA Rohan Jose","Chavacheril Building, KK Road,","Manarcadu, Kottayam","+91 90377 76493")
 out=img.convert("RGB").resize((W,H),Image.LANCZOS)
 os.makedirs(os.path.dirname(os.path.abspath(a.out)),exist_ok=True)
 out.save(a.out,quality=92,optimize=True) if a.out.lower().endswith((".jpg",".jpeg")) else out.save(a.out)
