@@ -78,18 +78,19 @@ text(W/2,246,a.subtitle,fit(a.subtitle,BD,34,W-80),navy,anchor="c")
 if a.subline: text(W/2,298,a.subline,fit(a.subline,MD,26,W-80),mute,anchor="c")
 items=[tuple(c.split("::",1)) for c in a.cards.split("|") if "::" in c][:6]
 n=len(items); rows=(n+1)//2
-cw_=478; gap=12; avail=900-344; ch_=min(178,(avail-gap*(rows-1))//rows); gx0=(W-2*cw_-24)/2
-hf=F(BD,27); df=F(MD,22)
+cw_=478; gap=14 if n<=4 else 12; avail=900-344; big=n<=4; ch_=min(262 if big else 178,(avail-gap*(rows-1))//rows); gx0=(W-2*cw_-24)/2
+hs,dsz,step,dy=(31,26,36,88) if big else (27,22,30,78)
+hf=F(BD,hs); df=F(MD,dsz)
 for i,(h,t) in enumerate(items):
     r,c=divmod(i,2); x=gx0+c*(cw_+24); y=344+r*(ch_+gap)
     shadow((x,y,x+cw_,y+ch_),22,blur=12,off=7,alpha=34)
     rr((x,y,x+cw_,y+ch_),22,fill=card,outline=line,width=2)
     rr((x,y+22,x+6,y+62),3,fill=orange)
     ell((x+24,y+20,x+68,y+64),fill=navy); text(x+46,y+27,str(i+1),F(XB,27),(255,255,255),anchor="c")
-    text(x+84,y+28,h.strip(),fit(h.strip(),BD,27,cw_-100),navy)
+    text(x+84,y+(26 if big else 28),h.strip(),fit(h.strip(),BD,hs,cw_-100),navy)
     lines=wrap(t.strip(),df,cw_-48)
-    assert len(lines)<=3,("detail too long",t)
-    for k,ln in enumerate(lines): text(x+24,y+78+k*30,ln,df,ink)
+    assert len(lines)<=(4 if big else 3),("detail too long",t)
+    for k,ln in enumerate(lines): text(x+24,y+dy+k*step,ln,df,ink)
 if a.note:
     rr((50,914,W-50,954),20,fill=(253,238,224))
     text(W/2,923,a.note,fit(a.note,SB,21,W-110),(150,70,10),anchor="c")
