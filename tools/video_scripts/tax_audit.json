@@ -1,0 +1,7 @@
+{"chip":"TAX AUDIT EXPLAINED","scenes":[
+{"say":"Do you need a tax audit this year?","title":"Tax audit: who needs it?","sub":"Section 44AB · FY 2025-26","dur":3.6},
+{"say":"For business, audit applies when turnover is above ₹1 crore.","title":"Business: above ₹1 crore","sub":"Limit is ₹10 crore if cash receipts and payments are each 5% or less.","dur":5.0},
+{"say":"For professionals, the limit is ₹50 lakh of gross receipts.","title":"Professionals: above ₹50 lakh","sub":"Doctors, lawyers, CAs, engineers, architects and others.","dur":4.6},
+{"say":"Under the presumptive scheme, declare the set profit and skip the audit.","title":"Presumptive scheme","sub":"Sections 44AD and 44ADA. Declaring less profit can bring an audit.","dur":5.0},
+{"say":"The audit report date is extended to 21 October 2026.","title":"Due date: 21 Oct 2026","sub":"Return for audited cases: 21 Nov 2026 (CBDT Circular 07/2026).","dur":4.8},
+{"say":"Check your turnover and keep your books ready.","title":"Check turnover, not profit","sub":"General guide only. Other conditions apply.","dur":3.8}]}
