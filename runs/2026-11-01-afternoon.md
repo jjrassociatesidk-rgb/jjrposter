@@ -1,0 +1,4 @@
+# 2026-11-01 afternoon check (~16:20 IST)
+Sources checked (web searches/fetches): CBIC/GST notifications and circulars, CBDT/Income Tax notifications, MCA/EPFO/ESIC circulars and due-date extensions, taxguru latest feed, studycafe (Notifications 03/2026 and 05/2026-CT dated 26 Oct, article dates 27-28 Oct), GSTN e-invoice maintenance advisory.
+Found: nothing new issued 1 Nov or since the 7 AM run. Items seen were already covered/held: GST Central Tax Notifications 03-07/2026 (26 Oct; effective 1 Nov; held as unverified from official text per 29 Oct instruction), Circulars 265/266 (28 Oct, unverified), CBIC Instruction 02/2026-GST (single secondary source), GSTN e-invoice maintenance (advisory 28 Oct, window ended 1 Nov 1 PM, not post-worthy), customs tariff values 31 Oct (outside audience scope).
+Decision: no post, no story. Nothing scheduled in Metricool. Errors: none (add_repo tool not exposed; repo already attached and pulled fine).
